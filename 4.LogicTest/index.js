@@ -6,9 +6,12 @@ const checkAnagramOfTwoWords = (word1, word2) => {
   const getWord2Length = word2.length;
   if(getWord1Length !== getWord2Length) return false;
   
-  for(let a = 0; a < word1.length; a++) {
-    const word = word1[a];
-    if(!word2.includes(word)) {
+  const sortWord1 = [...word1].sort();
+  const sortWord2 = [...word2].sort();
+
+  for(let a = 0; a < sortWord1.length; a++) {
+    const word = sortWord1[a];
+    if(!sortWord2.includes(word)) {
       return false;
     }
   }
